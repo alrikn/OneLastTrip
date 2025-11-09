@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene load_steps=6 format=3 uid="uid://b36usg7v6m7m"]
 
 [ext_resource type="Script" uid="uid://dtbcln74v7tq7" path="res://player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://repeating_cloud.jpg" id="2_0xm2m"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(50, 50)
@@ -35,8 +36,24 @@ polygon = PackedVector2Array(-28, 26, -28, 26, 24, 28, 24, -25, -25, -27)
 position = Vector2(0, 600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(0, -269)
 shape = SubResource("2")
 
 [node name="Visual" type="Polygon2D" parent="Ground"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+expand = true
+stretch_mode = 1
+texture = ExtResource("2_0xm2m")
+show_behind_parent = true
