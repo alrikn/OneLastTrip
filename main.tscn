@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene load_steps=7 format=3 uid="uid://b36usg7v6m7m"]
 
 [ext_resource type="Script" uid="uid://dtbcln74v7tq7" path="res://player.gd" id="1"]
+[ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://ground.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://repeating_cloud.jpg" id="2_0xm2m"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -8,8 +9,22 @@ size = Vector2(50, 50)
 
 [sub_resource type="ImageTexture" id="ImageTexture_ig7tw"]
 
+[sub_resource type="GDScript" id="GDScript_0xm2m"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(400, 50)
+size = Vector2(40000, 50)
 
 [node name="Main" type="Node2D"]
 editor_description = "testing a comment
@@ -34,12 +49,11 @@ polygon = PackedVector2Array(-28, 26, -28, 26, 24, 28, 24, -25, -25, -27)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 600)
+script = ExtResource("2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(0, -269)
+position = Vector2(0, -280)
 shape = SubResource("2")
-
-[node name="Visual" type="Polygon2D" parent="Ground"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
