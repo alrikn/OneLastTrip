@@ -37,7 +37,7 @@ func _integrate_forces(state):
 func _on_timer_code_timeout():
     print("Timer finished!")
     print("teleporting")
-    set_deferred("position", Vector2(100, 100))
-    linear_velocity = Vector2.ZERO
+    #set_deferred("position", Vector2(100, 100))
+    #linear_velocity = Vector2.ZERO
     set_timer = false
     pending_teleport = true

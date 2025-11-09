@@ -127,12 +127,3 @@ Use the GUI as a **scene visualizer and debugger**, not as a workspace.
 You’ll open it occasionally, not live in it.
 All the real work — code, logic, structure — lives in VS Code and terminal.
 
----
-
-If you want, I can give you a **prebuilt project template** that:
-
-* has the editor settings already set to VS Code,
-* uses CLI commands for running/exporting,
-* and contains minimal GUI scenes (like `Main.tscn` and `Player.tscn`).
-
-Would you like that?
