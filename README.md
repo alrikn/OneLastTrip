@@ -23,3 +23,4 @@ var timer_code = Timer.new()
     timer_code.timeout.connect(_on_timer_code_timeout)
     timer_code.start() # Start the timer
 ```
+- _integrate_forces will actually go to sleep (stop being called) if the player is not in movement. if you need to update a force while the player is being completely still, you can do ```sleeping = false``` this will force a call from _integrate_forces. (sleeping is built in global variable as far as i can tell)

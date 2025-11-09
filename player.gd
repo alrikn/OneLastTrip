@@ -3,11 +3,13 @@ extends RigidBody2D
 #global variables:
 var set_timer = false
 var pending_teleport = false
-
+var apply_upwards_acc = false
 
 
 func _ready():
     position = Vector2(100, 100)
+    set_process_input(true)
+
 
 func _physics_process(_delta):
     var cam = get_viewport().get_camera_2d()
@@ -33,6 +35,21 @@ func _integrate_forces(state):
         state.transform.origin = Vector2(100, 100)
         state.linear_velocity = Vector2.ZERO
         pending_teleport = false
+
+    if (apply_upwards_acc):
+        state.apply_force(Vector2(0, -3050)) # apply a bit of upwards thrust
+        print("apllying upwards thrust")
+    else:
+        print("not apllying upwards thrust")
+
+func _input(event: InputEvent) -> void:
+    if (event.is_action_pressed("move_up")):
+        apply_upwards_acc = true
+        sleeping = false
+    if (event.is_action_released("move_up")):
+        apply_upwards_acc = false
+
+
 
 func _on_timer_code_timeout():
     print("Timer finished!")
