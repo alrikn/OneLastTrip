@@ -23,14 +23,14 @@ func _physics_process(_delta):
     # smooth camera movement (or at least as smooth as i could make it)
     ####
     cam.position.x = position.x
-    if (position.y > cam.position.y):
-        var change = min(50, (abs(position.y - cam.position.y) / 10))
-        cam.position.y += change
-    if (position.y < cam.position.y):
-        var change = min(50, (abs(cam.position.y - position.y) / 10))
+    if (position.y > cam.position.y): #camera goes down
+        var change = min(1000, (abs(position.y - cam.position.y) / 10))
+        cam.position.y += change #max change is much bigger cus you should always be able to see the fall
+    if (position.y < cam.position.y): #camera goes up
+        var change = min(100, (abs(cam.position.y - position.y) / 10))
         cam.position.y -= change
 
-    if position.y > 500 && !set_timer:
+    if position.y > 1000 && !set_timer:
         var timer_code = Timer.new()
         add_child(timer_code) # Add it as a child to the scene tree
         timer_code.wait_time = 2.0 # Set the duration to 5 seconds
@@ -72,8 +72,6 @@ func _input(event: InputEvent) -> void:
         sleeping = false
     if (event.is_action_released("move_left")):
         apply_left_acc = false
-
-
 
 func _on_timer_code_timeout():
     print("Timer finished!")
