@@ -9,20 +9,6 @@ size = Vector2(50, 50)
 
 [sub_resource type="ImageTexture" id="ImageTexture_ig7tw"]
 
-[sub_resource type="GDScript" id="GDScript_0xm2m"]
-script/source = "extends StaticBody2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(40000, 50)
 
@@ -57,14 +43,15 @@ shape = SubResource("2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="BackgroundLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Background" type="TextureRect" parent="BackgroundLayer"]
+[node name="Parallax2D" type="Parallax2D" parent="."]
 show_behind_parent = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+scroll_scale = Vector2(0.5, 0.5)
+repeat_scroll = true
+repeat_size = Vector2(2208, 736)
+
+[node name="Background" type="TextureRect" parent="Parallax2D"]
+show_behind_parent = true
+size = Vector2(2208, 736)
+anchors_preset = 0
 texture = ExtResource("2_0xm2m")
-expand_mode = 1
 stretch_mode = 1
