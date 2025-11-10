@@ -4,6 +4,8 @@ extends RigidBody2D
 var set_timer = false
 var pending_teleport = false
 var apply_upwards_acc = false
+var apply_right_acc = false
+var apply_left_acc = false
 
 
 func _ready():
@@ -18,6 +20,10 @@ func _physics_process(_delta):
     print("cam.y = %s cam.x = %s" % [cam.position.y, cam.position.x])
 
     cam.position.x = position.x
+    if (position.y > cam.position.y):
+        cam.position.y += 1
+    if (position.y < cam.position.y):
+        cam.position.y -= 1
     #cam.position.y = position.y / 2
 
     if position.y > 500 && !set_timer:
@@ -37,10 +43,14 @@ func _integrate_forces(state):
         pending_teleport = false
 
     if (apply_upwards_acc):
-        state.apply_force(Vector2(0, -3050)) # apply a bit of upwards thrust
+        state.apply_force(Vector2(0, -2500)) # apply a bit of upwards thrust
         print("apllying upwards thrust")
-    else:
-        print("not apllying upwards thrust")
+    if (apply_right_acc):
+        state.apply_force(Vector2(500, 0)) # apply a bit of right thrust
+        print("apllying right thrust")
+    if (apply_left_acc):
+        state.apply_force(Vector2(-500, 0)) # apply a bit of left thrust
+        print("apllying left thrust")
 
 func _input(event: InputEvent) -> void:
     if (event.is_action_pressed("move_up")):
@@ -48,6 +58,16 @@ func _input(event: InputEvent) -> void:
         sleeping = false
     if (event.is_action_released("move_up")):
         apply_upwards_acc = false
+    if (event.is_action_pressed("move_right")):
+        apply_right_acc = true
+        sleeping = false
+    if (event.is_action_released("move_right")):
+        apply_right_acc = false
+    if (event.is_action_pressed("move_left")):
+        apply_left_acc = true
+        sleeping = false
+    if (event.is_action_released("move_left")):
+        apply_left_acc = false
 
 
 
