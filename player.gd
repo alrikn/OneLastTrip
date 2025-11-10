@@ -19,12 +19,16 @@ func _physics_process(_delta):
 
     print("cam.y = %s cam.x = %s" % [cam.position.y, cam.position.x])
 
+    ####
+    # smooth camera movement (or at least as smooth as i could make it)
+    ####
     cam.position.x = position.x
     if (position.y > cam.position.y):
-        cam.position.y += 1
+        var change = min(50, (abs(position.y - cam.position.y) / 10))
+        cam.position.y += change
     if (position.y < cam.position.y):
-        cam.position.y -= 1
-    #cam.position.y = position.y / 2
+        var change = min(50, (abs(cam.position.y - position.y) / 10))
+        cam.position.y -= change
 
     if position.y > 500 && !set_timer:
         var timer_code = Timer.new()
