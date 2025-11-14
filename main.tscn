@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene load_steps=9 format=3 uid="uid://b36usg7v6m7m"]
 
 [ext_resource type="Script" uid="uid://betlnhs26g2q7" path="res://player.gd" id="1"]
 [ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://ground.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://repeating_cloud.jpg" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://qlvcn52gvhun" path="res://value_calculator.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://stats_label.gd" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(50, 50)
@@ -59,3 +60,16 @@ offset_right = 2208.0
 offset_bottom = 736.0
 texture = ExtResource("2_0xm2m")
 stretch_mode = 1
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="StatsPanel" type="Panel" parent="HUD"]
+custom_minimum_size = Vector2(220, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatsLabel" type="Label" parent="HUD/StatsPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("5_lquwl")
