@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene load_steps=8 format=3 uid="uid://b36usg7v6m7m"]
 
-[ext_resource type="Script" uid="uid://dtbcln74v7tq7" path="res://player.gd" id="1"]
+[ext_resource type="Script" uid="uid://betlnhs26g2q7" path="res://player.gd" id="1"]
 [ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://ground.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://repeating_cloud.jpg" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://qlvcn52gvhun" path="res://value_calculator.gd" id="2_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(50, 50)
@@ -33,6 +34,10 @@ texture = SubResource("ImageTexture_ig7tw")
 color = Color(1, 0.023529412, 1, 1)
 polygon = PackedVector2Array(-28, 26, -28, 26, 24, 28, 24, -25, -25, -27)
 
+[node name="PlayerState" type="Node" parent="Player" node_paths=PackedStringArray("player")]
+script = ExtResource("2_1bvp3")
+player = NodePath("..")
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 600)
 script = ExtResource("2")
@@ -46,12 +51,11 @@ shape = SubResource("2")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 show_behind_parent = true
 scroll_scale = Vector2(0.5, 0.5)
-repeat_scroll = true
 repeat_size = Vector2(2208, 736)
 
 [node name="Background" type="TextureRect" parent="Parallax2D"]
 show_behind_parent = true
-size = Vector2(2208, 736)
-anchors_preset = 0
+offset_right = 2208.0
+offset_bottom = 736.0
 texture = ExtResource("2_0xm2m")
 stretch_mode = 1

@@ -15,9 +15,9 @@ func _ready():
 
 func _physics_process(_delta):
     var cam = get_viewport().get_camera_2d()
-    print("y = %s x = %s" % [position.y, position.x])
+    #print("y = %s x = %s" % [position.y, position.x])
 
-    print("cam.y = %s cam.x = %s" % [cam.position.y, cam.position.x])
+    #print("cam.y = %s cam.x = %s" % [cam.position.y, cam.position.x])
 
     ####
     # smooth camera movement (or at least as smooth as i could make it)
