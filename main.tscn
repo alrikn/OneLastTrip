@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene load_steps=9 format=3 uid="uid://b36usg7v6m7m"]
 
 [ext_resource type="Script" uid="uid://betlnhs26g2q7" path="res://player.gd" id="1"]
 [ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://ground.gd" id="2"]
@@ -6,6 +6,19 @@
 [ext_resource type="Script" uid="uid://qlvcn52gvhun" path="res://value_calculator.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://br1soo0a6ah23" path="res://airplane_still.png" id="2_7mycd"]
 [ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://stats_label.gd" id="5_lquwl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mycd"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"thrust",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(40000, 900)
@@ -29,6 +42,10 @@ player = NodePath("..")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
 polygon = PackedVector2Array(-44, 79, -44, 20, -31, 6, -24, -50, 2, -94, 26, -53, 33, 7, 45, 19, 44, 79, 25, 53, 1, 79, -24, 52)
+
+[node name="Exhaust" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_7mycd")
+animation = &"thrust"
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 600)
