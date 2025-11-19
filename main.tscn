@@ -4,12 +4,11 @@
 [ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://ground.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://repeating_cloud.jpg" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://qlvcn52gvhun" path="res://value_calculator.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://br1soo0a6ah23" path="res://airplane_still.png" id="2_7mycd"]
 [ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://stats_label.gd" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(50, 50)
-
-[sub_resource type="ImageTexture" id="ImageTexture_ig7tw"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(40000, 50)
@@ -28,17 +27,14 @@ script = ExtResource("1")
 shape = SubResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(27.000002, -27)
-scale = Vector2(-53.000015, 54.999996)
-texture = SubResource("ImageTexture_ig7tw")
-
-[node name="Polygon2D" type="Polygon2D" parent="Player"]
-color = Color(1, 0.023529412, 1, 1)
-polygon = PackedVector2Array(-28, 26, -28, 26, 24, 28, 24, -25, -25, -27)
+texture = ExtResource("2_7mycd")
 
 [node name="PlayerState" type="Node" parent="Player" node_paths=PackedStringArray("player")]
 script = ExtResource("2_1bvp3")
 player = NodePath("..")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PackedVector2Array(-44, 79, -44, 20, -31, 6, -24, -50, 2, -94, 26, -53, 33, 7, 45, 19, 44, 79, 25, 53, 1, 79, -24, 52)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 600)
