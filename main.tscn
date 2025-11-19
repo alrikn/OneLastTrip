@@ -60,12 +60,12 @@ shape = SubResource("2")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 show_behind_parent = true
 scroll_scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(2208, 736)
+repeat_size = Vector2(2208, 2208)
 
 [node name="Background" type="TextureRect" parent="Parallax2D"]
 show_behind_parent = true
 offset_right = 2208.0
-offset_bottom = 736.0
+offset_bottom = 2208.0
 texture = ExtResource("2_0xm2m")
 stretch_mode = 1
 

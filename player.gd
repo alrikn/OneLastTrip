@@ -7,7 +7,7 @@ var apply_upwards_acc = false
 var apply_right_acc = false
 var apply_left_acc = false
 @export var thrust_force: float = 2500.0
-@export var torque_force: float = 2500.0
+@export var torque_force: float = 3500.0
 
 
 func _ready():
