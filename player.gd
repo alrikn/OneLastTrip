@@ -6,6 +6,8 @@ var pending_teleport = false
 var apply_upwards_acc = false
 var apply_right_acc = false
 var apply_left_acc = false
+@export var thrust_force: float = 2500.0
+@export var torque_force: float = 2500.0
 
 
 func _ready():
@@ -41,19 +43,26 @@ func _physics_process(_delta):
         set_timer = true
 
 func _integrate_forces(state):
-    if pending_teleport:
-        state.transform.origin = Vector2(100, 100)
+    if pending_teleport: #this is used to rest it if it goes out of bound or smth
+        state.transform.origin = Vector2(100, -100)
+        state.transform = Transform2D(0.0, state.transform.origin)
         state.linear_velocity = Vector2.ZERO
+        state.angular_velocity = 0.0
         pending_teleport = false
 
     if (apply_upwards_acc):
-        state.apply_force(Vector2(0, -2500)) # apply a bit of upwards thrust
+        #state.apply_force(Vector2(0, -2500)) # apply a bit of upwards thrust
+        # Rocket thrust relative to orientation
+        var thrust_dir = Vector2.UP.rotated(rotation)
+        apply_force(thrust_dir * thrust_force)
         print("apllying upwards thrust")
     if (apply_right_acc):
-        state.apply_force(Vector2(500, 0)) # apply a bit of right thrust
+        #state.apply_force(Vector2(500, 0)) # apply a bit of right thrust
+        apply_torque(torque_force)
         print("apllying right thrust")
     if (apply_left_acc):
-        state.apply_force(Vector2(-500, 0)) # apply a bit of left thrust
+        #state.apply_force(Vector2(-500, 0)) # apply a bit of left thrust
+        apply_torque(-torque_force)
         print("apllying left thrust")
 
 func _input(event: InputEvent) -> void:
@@ -72,6 +81,9 @@ func _input(event: InputEvent) -> void:
         sleeping = false
     if (event.is_action_released("move_left")):
         apply_left_acc = false
+    if (event.is_action_pressed("reset")):
+        pending_teleport = true
+        sleeping = false
 
 func _on_timer_code_timeout():
     print("Timer finished!")
