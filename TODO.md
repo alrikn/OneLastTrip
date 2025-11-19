@@ -1,6 +1,6 @@
 # TODO list
 
-this is a todo list to investigate and/or implement things that i hear about or am struggling to understand. (not ordered)
+this is a todo list to investigate and/or implement things that i hear about or am struggling to understand or simply want to implement. (not ordered)
 
 - [ ] investigate state machine that deals with input
 - [x] why does rotation slow down and stop, but linear velocity doesn't
@@ -19,4 +19,4 @@ this is a todo list to investigate and/or implement things that i hear about or 
 - [ ] figure out how to make it explode if its touching ground and on its side (or if it touches the ground too fast)
   - [ ] make a explosion sprite sheet for death
 - [x] make a reset button
-- [ ] implement an animation (prefarably programmatically), displaying white exhaust smoke for thr rotation acceleration
+- [ ] implement an animation (preferably programmatically), displaying white exhaust smoke for the rotation acceleration
