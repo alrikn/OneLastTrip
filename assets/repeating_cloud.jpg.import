@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t618ncsi7ka"
-path="res://.godot/imported/thrust_1.png-dd9f2fc44660f2fe616cdfb3cce54315.ctex"
+uid="uid://dmcfo50q5cr7g"
+path="res://.godot/imported/repeating_cloud.jpg-7993b53127c1f3c949610bdae0b86581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://thrust_1.png"
-dest_files=["res://.godot/imported/thrust_1.png-dd9f2fc44660f2fe616cdfb3cce54315.ctex"]
+source_file="res://assets/repeating_cloud.jpg"
+dest_files=["res://.godot/imported/repeating_cloud.jpg-7993b53127c1f3c949610bdae0b86581.ctex"]
 
 [params]
 

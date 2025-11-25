@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsn52gp4ormvq"
-path="res://.godot/imported/thrust_2.png-1413b257c142722bbf29a05d5d461deb.ctex"
+uid="uid://cepdhtmvmt6x8"
+path="res://.godot/imported/tileable_lava.png-8cced6c79656fa41bb5389556d020e64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://thrust_2.png"
-dest_files=["res://.godot/imported/thrust_2.png-1413b257c142722bbf29a05d5d461deb.ctex"]
+source_file="res://assets/tileable_lava.png"
+dest_files=["res://.godot/imported/tileable_lava.png-8cced6c79656fa41bb5389556d020e64.ctex"]
 
 [params]
 

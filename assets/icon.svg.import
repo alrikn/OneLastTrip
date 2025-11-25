@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br1soo0a6ah23"
-path="res://.godot/imported/airplane_still.png-2940b4dd36be54dd528c4c86e7b885af.ctex"
+uid="uid://gl2f01sgii53"
+path="res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://airplane_still.png"
-dest_files=["res://.godot/imported/airplane_still.png-2940b4dd36be54dd528c4c86e7b885af.ctex"]
+source_file="res://assets/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
