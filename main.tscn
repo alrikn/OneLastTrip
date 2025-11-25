@@ -1,20 +1,37 @@
-[gd_scene load_steps=9 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene load_steps=14 format=3 uid="uid://b36usg7v6m7m"]
 
 [ext_resource type="Script" uid="uid://betlnhs26g2q7" path="res://player.gd" id="1"]
 [ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://ground.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://repeating_cloud.jpg" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://qlvcn52gvhun" path="res://value_calculator.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://br1soo0a6ah23" path="res://airplane_still.png" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://t618ncsi7ka" path="res://thrust_1.png" id="4_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bsn52gp4ormvq" path="res://thrust_2.png" id="5_efxa6"]
 [ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://stats_label.gd" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://tgqh4rxw87nv" path="res://thrust_3.png" id="6_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dgdhok33tpdgq" path="res://thrust_4.png" id="7_ycdy4"]
+[ext_resource type="Script" uid="uid://bd6p8q3a5s0k2" path="res://exhaust.gd" id="8_efxa6"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7mycd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_w48qg"]
 animations = [{
 "frames": [],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4c57u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_efxa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dg77c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ycdy4")
+}],
 "loop": true,
 "name": &"thrust",
 "speed": 5.0
@@ -44,8 +61,13 @@ player = NodePath("..")
 polygon = PackedVector2Array(-44, 79, -44, 20, -31, 6, -24, -50, 2, -94, 26, -53, 33, 7, 45, 19, 44, 79, 25, 53, 1, 79, -24, 52)
 
 [node name="Exhaust" type="AnimatedSprite2D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_7mycd")
+show_behind_parent = true
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_w48qg")
 animation = &"thrust"
+offset = Vector2(1, 107)
+flip_v = true
+script = ExtResource("8_efxa6")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 600)

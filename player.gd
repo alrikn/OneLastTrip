@@ -28,6 +28,7 @@ func _physics_process(_delta):
     if (position.y > cam.position.y): #camera goes down
         var change = min(1000, (abs(position.y - cam.position.y) / 10))
         cam.position.y += change #max change is much bigger cus you should always be able to see the fall
+        #cam.position.y = position.y
     if (position.y < cam.position.y): #camera goes up
         var change = min(100, (abs(cam.position.y - position.y) / 10))
         cam.position.y -= change

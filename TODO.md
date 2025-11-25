@@ -19,4 +19,5 @@ this is a todo list to investigate and/or implement things that i hear about or 
 - [ ] figure out how to make it explode if its touching ground and on its side (or if it touches the ground too fast)
   - [ ] make a explosion sprite sheet for death
 - [x] make a reset button
-- [ ] implement an animation (preferably programmatically), displaying white exhaust smoke for the rotation acceleration
+- [ ] implement an animation (preferably programmatically), displaying white exhaust smoke for the rotation acceleration and linear accelaration
+  - [ ] every exhaust frame has to be 28px wide by 79px high
