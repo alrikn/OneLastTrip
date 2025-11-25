@@ -7,8 +7,10 @@ var apply_upwards_acc = false
 var apply_right_acc = false
 var apply_left_acc = false
 @export var thrust_force: float = 2500.0
-@export var torque_force: float = 3500.0
+@export var torque_force: float = 5500.0
 
+#camera controls
+const MAX_CAMERA_DOWN = 450.0 #the player can only be a maximum of 150 px down from the camera
 
 func _ready():
     position = Vector2(100, 100)
@@ -26,14 +28,23 @@ func _physics_process(_delta):
     ####
     cam.position.x = position.x
     if (position.y > cam.position.y): #camera goes down
-        var change = min(1000, (abs(position.y - cam.position.y) / 10))
-        cam.position.y += change #max change is much bigger cus you should always be able to see the fall
+        #the camera should never be over MAX_CAMERA_DOWN over the player, as that would mean we don't see the player falling anymore
+        # however, the camera shoul always move smoothly and never suddenly jar if it gets stuck at a limit
+
+        var dist = position.y - cam.position.y #this should always be positive
+        var percentage = dist / MAX_CAMERA_DOWN # the higher percentage is, the more change needs to be applied
+        #if percentage reaches 0.99 or further, the change needs to be almost dist - MAX_CAMERA_DOWN right?
+        var change = abs(percentage * (dist))
+        #print("percentage = %.2f \t change = %.2f\t dist = %.2f" % [percentage, change, dist])
+        cam.position.y += change
+        #if (dist > MAX_CAMERA_DOWN): # theoretically we never get to this part
+        #    cam.position.y = MAX_CAMERA_DOWN + position.y
         #cam.position.y = position.y
     if (position.y < cam.position.y): #camera goes up
-        var change = min(100, (abs(cam.position.y - position.y) / 10))
+        var change = abs(cam.position.y - position.y) / 10
         cam.position.y -= change
 
-    if position.y > 1000 && !set_timer:
+    if position.y > 100000 && !set_timer:
         var timer_code = Timer.new()
         add_child(timer_code) # Add it as a child to the scene tree
         timer_code.wait_time = 2.0 # Set the duration to 5 seconds
@@ -56,7 +67,6 @@ func _integrate_forces(state):
         # Rocket thrust relative to orientation
         var thrust_dir = Vector2.UP.rotated(rotation)
         apply_force(thrust_dir * thrust_force)
-        print("apllying upwards thrust")
     if (apply_right_acc):
         #state.apply_force(Vector2(500, 0)) # apply a bit of right thrust
         apply_torque(torque_force)
