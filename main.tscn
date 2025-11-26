@@ -94,7 +94,7 @@ stretch_mode = 1
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="StatsPanel" type="Panel" parent="HUD"]
-custom_minimum_size = Vector2(220, 80)
+custom_minimum_size = Vector2(150, 110)
 offset_right = 40.0
 offset_bottom = 40.0
 
