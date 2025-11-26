@@ -2,3 +2,4 @@
 .godot/
 /android/
 *.txt
+*.x86_64
