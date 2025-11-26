@@ -10,7 +10,7 @@ var apply_left_acc = false
 @export var torque_force: float = 5500.0
 
 #camera controls
-const MAX_CAMERA_DOWN = 450.0 #the player can only be a maximum of 150 px down from the camera
+const MAX_CAMERA_DOWN = 1050.0 #the player can only be a maximum of 150 px down from the camera
 
 func _ready():
     position = Vector2(100, 100)
