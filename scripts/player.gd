@@ -41,7 +41,7 @@ func _physics_process(_delta):
         #    cam.position.y = MAX_CAMERA_DOWN + position.y
         #cam.position.y = position.y
     if (position.y < cam.position.y): #camera goes up
-        var change = abs(cam.position.y - position.y) / 4
+        var change = abs(cam.position.y - position.y) / 3
         cam.position.y -= change
 
     if position.y > 100000 && !set_timer:
