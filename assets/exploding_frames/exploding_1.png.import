@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcl2g8kcr3vn"
-path="res://.godot/imported/exploding_7.png-daf45c6b998ab2d3e6236ee6a660f31d.ctex"
+uid="uid://ng4yxqwhp723"
+path="res://.godot/imported/exploding_1.png-75ccb56ec6ffa645df1a00bb6a35cd2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/frames/exploding_7.png"
-dest_files=["res://.godot/imported/exploding_7.png-daf45c6b998ab2d3e6236ee6a660f31d.ctex"]
+source_file="res://assets/exploding_frames/exploding_1.png"
+dest_files=["res://.godot/imported/exploding_1.png-75ccb56ec6ffa645df1a00bb6a35cd2e.ctex"]
 
 [params]
 

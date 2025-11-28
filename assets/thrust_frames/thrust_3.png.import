@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxkaivphnraa7"
-path="res://.godot/imported/exploding_6.png-47858be36577953baa75058cc818a504.ctex"
+uid="uid://tgqh4rxw87nv"
+path="res://.godot/imported/thrust_3.png-9893d842e92ed646aaf5726e38066ae7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/frames/exploding_6.png"
-dest_files=["res://.godot/imported/exploding_6.png-47858be36577953baa75058cc818a504.ctex"]
+source_file="res://assets/thrust_frames/thrust_3.png"
+dest_files=["res://.godot/imported/thrust_3.png-9893d842e92ed646aaf5726e38066ae7.ctex"]
 
 [params]
 
