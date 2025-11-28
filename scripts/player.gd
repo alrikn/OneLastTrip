@@ -129,8 +129,7 @@ func _input(event: InputEvent) -> void:
     if (event.is_action_released("move_left")):
         apply_left_acc = false
     if (event.is_action_pressed("reset")):
-        pending_teleport = true
-        sleeping = false
+        explode()
 
 func _on_timer_code_timeout():
     print("Timer finished!")
