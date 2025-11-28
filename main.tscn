@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene load_steps=31 format=3 uid="uid://b36usg7v6m7m"]
 
 [ext_resource type="Script" uid="uid://betlnhs26g2q7" path="res://scripts/player.gd" id="1"]
 [ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://scripts/ground.gd" id="2"]
@@ -11,6 +11,22 @@
 [ext_resource type="Texture2D" uid="uid://tgqh4rxw87nv" path="res://assets/thrust_3.png" id="6_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dgdhok33tpdgq" path="res://assets/thrust_4.png" id="7_ycdy4"]
 [ext_resource type="Script" uid="uid://bd6p8q3a5s0k2" path="res://scripts/exhaust.gd" id="8_efxa6"]
+[ext_resource type="Texture2D" uid="uid://ng4yxqwhp723" path="res://assets/frames/exploding_1.png" id="9_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://ilv3n3xb4q73" path="res://assets/frames/exploding_2.png" id="10_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://dg4t6sbjfnuob" path="res://assets/frames/exploding_3.png" id="11_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://bl2r8oyhfcioe" path="res://assets/frames/exploding_4.png" id="12_kq58d"]
+[ext_resource type="Texture2D" uid="uid://dn3qkntnltiya" path="res://assets/frames/exploding_5.png" id="13_seu75"]
+[ext_resource type="Texture2D" uid="uid://bxkaivphnraa7" path="res://assets/frames/exploding_6.png" id="14_htxhm"]
+[ext_resource type="Texture2D" uid="uid://jcl2g8kcr3vn" path="res://assets/frames/exploding_7.png" id="15_jq2sk"]
+[ext_resource type="Texture2D" uid="uid://dtjr2kxxwwh23" path="res://assets/frames/exploding_8.png" id="16_4k2k6"]
+[ext_resource type="Texture2D" uid="uid://dmwf0xmvlrj8" path="res://assets/frames/exploding_9.png" id="17_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://dqfbffixwtc4r" path="res://assets/frames/exploding_10.png" id="18_ok6jj"]
+[ext_resource type="Texture2D" uid="uid://v8ay8g7h04tp" path="res://assets/frames/exploding_11.png" id="19_facbu"]
+[ext_resource type="Texture2D" uid="uid://bixcu3c4cd5b8" path="res://assets/frames/exploding_12.png" id="20_b1qrp"]
+[ext_resource type="Texture2D" uid="uid://kohqrply17e8" path="res://assets/frames/exploding_13.png" id="21_come4"]
+[ext_resource type="Texture2D" uid="uid://bh1r637701hxw" path="res://assets/frames/exploding_14.png" id="22_h8e4i"]
+[ext_resource type="Texture2D" uid="uid://c8md2mpn6l7gm" path="res://assets/frames/exploding_15.png" id="23_4lmeg"]
+[ext_resource type="Script" uid="uid://b7wbsl733cj5m" path="res://scripts/explosion.gd" id="24_0cp0l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w48qg"]
 animations = [{
@@ -34,6 +50,64 @@ animations = [{
 }],
 "loop": true,
 "name": &"thrust",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2t1y"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_a6jrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xuqvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qsp4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kq58d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_seu75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_htxhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jq2sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4k2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0rl1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ok6jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_facbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_b1qrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_come4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_h8e4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4lmeg")
+}],
+"loop": false,
+"name": &"explosion",
 "speed": 5.0
 }]
 
@@ -68,6 +142,12 @@ animation = &"thrust"
 offset = Vector2(1, 107)
 flip_v = true
 script = ExtResource("8_efxa6")
+
+[node name="Explosion" type="AnimatedSprite2D" parent="Player"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_d2t1y")
+animation = &"explosion"
+script = ExtResource("24_0cp0l")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 600)

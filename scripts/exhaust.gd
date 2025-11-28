@@ -8,12 +8,12 @@ func _ready():
 
 func _physics_process(_delta):
     if not player:
-        print(" not player") # this is always reached
+        print(" not player")
         return
 
     # When the player is applying upward thrust
     if player.apply_upwards_acc:
-        if !visible:
+        if !visible and player.exploding == false:
             visible = true
             play("thrust")  # plays and loops your thrust animation
     else:

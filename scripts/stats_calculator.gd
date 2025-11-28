@@ -8,7 +8,6 @@ var height: float
 var distance: float
 var previous_velocity := Vector2.ZERO
 var g_force := 0.0
-var exploded := false
 const PIXELS_PER_METER = 100.0
 
 func _physics_process(_delta):
@@ -24,7 +23,7 @@ func _physics_process(_delta):
     var accel_magnitude = acceleration.length()
 
     if (accel_magnitude > 6):
-        exploded = true
+        player.explode()
         print("accel_magnitude = %.2f" % [accel_magnitude])
 
     #print("linear_vel = %s, angular_vel = %s, height = %s" % [linear_vel, angular_vel, height])

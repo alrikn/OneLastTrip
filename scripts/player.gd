@@ -6,6 +6,7 @@ var pending_teleport = false
 var apply_upwards_acc = false
 var apply_right_acc = false
 var apply_left_acc = false
+var exploding = false #are we currently exploding?
 @export var thrust_force: float = 2500.0
 @export var torque_force: float = 5500.0
 
@@ -16,6 +17,41 @@ func _ready():
     position = Vector2(100, 100)
     set_process_input(true)
 
+func explode():
+    exploding = true
+
+    #set_process_input(false)
+    sleeping = true
+    freeze = true
+
+    linear_velocity = Vector2.ZERO
+    angular_velocity = 0
+
+    $Sprite2D.hide()
+    $Exhaust.hide()
+
+    var explosion = $Explosion
+    explosion.rotation = -rotation #to amke sure its upright
+    explosion.show()
+    explosion.frame = 0
+    explosion.play("explosion")
+
+    var frames = explosion.sprite_frames.get_frame_count("explosion")
+
+    # Wait until animation finishes
+    while explosion.frame < frames - 1:
+        await get_tree().physics_frame
+
+    explosion.hide()
+
+    pending_teleport = true
+    freeze = false
+    sleeping = false
+    #set_process_input(true)
+
+    $Sprite2D.show()
+    $Exhaust.show()
+    exploding = false
 
 func _physics_process(_delta):
     var cam = get_viewport().get_camera_2d()
