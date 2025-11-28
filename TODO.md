@@ -21,3 +21,5 @@ this is a todo list to investigate and/or implement things that i hear about or 
 - [x] make a reset button
 - [ ] implement an animation (preferably programmatically), displaying white exhaust smoke for the rotation acceleration and linear accelaration
   - [ ] every exhaust frame has to be 28px wide by 79px high
+- [x] implement an explosion for when the user has more g forces than reasonable.
+- [ ] move the explosion functio from the player script to the explosion script
