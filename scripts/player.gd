@@ -99,17 +99,17 @@ func _integrate_forces(state):
 		pending_teleport = false
 
 
-    if (apply_upwards_acc):
-        #state.apply_force(Vector2(0, -2500)) # apply a bit of upwards thrust
-        # Rocket thrust relative to orientation
-        var thrust_dir = Vector2.UP.rotated(rotation)
-        apply_force(thrust_dir * thrust_force)
-    if (apply_right_acc):
-        #state.apply_force(Vector2(500, 0)) # apply a bit of right thrust
-        apply_torque(torque_force)
-    if (apply_left_acc):
-        #state.apply_force(Vector2(-500, 0)) # apply a bit of left thrust
-        apply_torque(-torque_force)
+	if (apply_upwards_acc):
+		#state.apply_force(Vector2(0, -2500)) # apply a bit of upwards thrust
+		# Rocket thrust relative to orientation
+		var thrust_dir = Vector2.UP.rotated(rotation)
+		apply_force(thrust_dir * thrust_force)
+	if (apply_right_acc):
+		#state.apply_force(Vector2(500, 0)) # apply a bit of right thrust
+		apply_torque(torque_force)
+	if (apply_left_acc):
+		#state.apply_force(Vector2(-500, 0)) # apply a bit of left thrust
+		apply_torque(-torque_force)
 
 
 func _input(event: InputEvent) -> void:
