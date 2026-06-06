@@ -11,6 +11,7 @@ editor_description = "testing a comment
 testing a comment with another line"
 
 [node name="Player" parent="." unique_id=513556332 instance=ExtResource("1_1bvp3")]
+position = Vector2(0, -183)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=668424065]
 
