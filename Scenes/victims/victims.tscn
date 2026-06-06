@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://begkputwheor5"]
+
+[ext_resource type="Texture2D" uid="uid://c4g1033gtolsy" path="res://assets/pixel_people/robot.png" id="1_gnsos"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdjn0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_cdjn0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_gnsos")
