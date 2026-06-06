@@ -121,7 +121,7 @@ script = ExtResource("3_0gysh")
 player = NodePath("..")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=792173560]
-polygon = PackedVector2Array(-15, 25, -21, 41, -33, 41, -20, 13, -15, -22, 0, -47, 14, -21, 20, 11, 32, 41, 20, 41, 13, 26, 12, 38, -9, 38)
+polygon = PackedVector2Array(-15, 25, -21, 41, -33, 41, -20, 13, -15, -22, 0, -47, 14, -21, 18, 9, 32, 41, 20, 41, 13, 26, 12, 38, -9, 38)
 
 [node name="Exhaust" type="AnimatedSprite2D" parent="." unique_id=1985453219]
 show_behind_parent = true

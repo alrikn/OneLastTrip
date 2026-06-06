@@ -7,8 +7,8 @@ var apply_upwards_acc = false
 var apply_right_acc = false
 var apply_left_acc = false
 var exploding = false #are we currently exploding?
-@export var thrust_force: float = 2500.0
-@export var torque_force: float = 5500.0
+@export var thrust_force: float = 2100.0
+@export var torque_force: float = 4500.0
 
 #camera controls
 const MAX_CAMERA_DOWN = 1050.0 #the player can only be a maximum of 150 px down from the camera
