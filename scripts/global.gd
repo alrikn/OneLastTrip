@@ -14,7 +14,8 @@ func reset_game():
 
 func _process(delta: float):
 	if is_game_active:
-		time_left -= delta
-		if time_left <= 0:
+		if time_left > 0:
+			time_left -= delta
+		else
 			time_left = 0
 			is_game_active = false
