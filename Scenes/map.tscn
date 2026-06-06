@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8g1lpm5fcitg"]
+
+[ext_resource type="Script" uid="uid://df44sr16cpemp" path="res://scripts/ground.gd" id="1_26yhd"]
+[ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://assets/repeating_cloud.jpg" id="2_p3ir5"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(40000, 900)
+
+[node name="Map" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 600)
+script = ExtResource("1_26yhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(0, -22)
+shape = SubResource("2")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+show_behind_parent = true
+z_index = -10
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(2208, 2208)
+
+[node name="Background" type="TextureRect" parent="Parallax2D"]
+show_behind_parent = true
+offset_right = 2208.0
+offset_bottom = 2208.0
+texture = ExtResource("2_p3ir5")
+stretch_mode = 1
