@@ -8,6 +8,6 @@ var is_game_active: bool = false
 # But for now, we'll just keep it simple.
 
 func reset_game():
-    time_left = 300.0
-    score = 0
-    is_game_active = true
+	time_left = 300.0
+	score = 0
+	is_game_active = true

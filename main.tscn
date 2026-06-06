@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b36usg7v6m7m"]
+[gd_scene format=3 uid="uid://b36usg7v6m7m"]
 
-[ext_resource type="PackedScene" uid="uid://bduw6bopvn52e" path="res://Scenes/player.tscn" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dh1huukdkkwlj" path="res://Scenes/hud.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://b8g1lpm5fcitg" path="res://Scenes/map.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bduw6bopvn52e" path="res://Scenes/player/player.tscn" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dh1huukdkkwlj" path="res://Scenes/hud/hud.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b8g1lpm5fcitg" path="res://Scenes/map/map.tscn" id="3_h2yge"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=2016864035]
 editor_description = "testing a comment
 
 
 testing a comment with another line"
 
-[node name="Player" parent="." instance=ExtResource("1_1bvp3")]
+[node name="Player" parent="." unique_id=513556332 instance=ExtResource("1_1bvp3")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=668424065]
 
-[node name="HUD" parent="." instance=ExtResource("2_h2yge")]
+[node name="HUD" parent="." unique_id=1061871594 instance=ExtResource("2_h2yge")]
 
-[node name="Map" parent="." instance=ExtResource("3_h2yge")]
+[node name="Map" parent="." unique_id=793409893 instance=ExtResource("3_h2yge")]
