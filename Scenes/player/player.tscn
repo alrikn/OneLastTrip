@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bduw6bopvn52e"]
 
 [ext_resource type="Script" uid="uid://betlnhs26g2q7" path="res://scripts/player.gd" id="1_2ijsl"]
-[ext_resource type="Texture2D" uid="uid://br1soo0a6ah23" path="res://assets/airplane_still.png" id="2_p1odr"]
+[ext_resource type="Texture2D" uid="uid://o3jjffok130h" path="res://assets/rocket.png" id="2_mnu3u"]
 [ext_resource type="Script" uid="uid://qlvcn52gvhun" path="res://scripts/stats_calculator.gd" id="3_0gysh"]
 [ext_resource type="Texture2D" uid="uid://t618ncsi7ka" path="res://assets/thrust_frames/thrust_1.png" id="4_vfarp"]
 [ext_resource type="Texture2D" uid="uid://bsn52gp4ormvq" path="res://assets/thrust_frames/thrust_2.png" id="5_y6uwr"]
@@ -114,18 +114,18 @@ angular_damp_mode = 1
 script = ExtResource("1_2ijsl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=637247870]
-texture = ExtResource("2_p1odr")
+texture = ExtResource("2_mnu3u")
 
 [node name="PlayerState" type="Node" parent="." unique_id=985889900 node_paths=PackedStringArray("player")]
 script = ExtResource("3_0gysh")
 player = NodePath("..")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=792173560]
-polygon = PackedVector2Array(-44, 79, -44, 20, -31, 6, -24, -50, 2, -94, 26, -53, 33, 7, 45, 19, 44, 79, 25, 53, 1, 79, -24, 52)
+polygon = PackedVector2Array(-15, 25, -21, 41, -33, 41, -20, 13, -15, -22, 0, -47, 14, -21, 18, 9, 32, 41, 20, 41, 13, 26, 12, 38, -9, 38)
 
 [node name="Exhaust" type="AnimatedSprite2D" parent="." unique_id=1985453219]
 show_behind_parent = true
-position = Vector2(0, -1)
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_w48qg")
 animation = &"thrust"
 offset = Vector2(1, 107)
@@ -134,6 +134,7 @@ script = ExtResource("8_xuaoq")
 
 [node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=1608753146]
 visible = false
+position = Vector2(-2, -63)
 sprite_frames = SubResource("SpriteFrames_d2t1y")
 animation = &"explosion"
 script = ExtResource("24_3vlem")
