@@ -106,11 +106,9 @@ func _integrate_forces(state):
     if (apply_right_acc):
         #state.apply_force(Vector2(500, 0)) # apply a bit of right thrust
         apply_torque(torque_force)
-        print("apllying right thrust")
     if (apply_left_acc):
         #state.apply_force(Vector2(-500, 0)) # apply a bit of left thrust
         apply_torque(-torque_force)
-        print("apllying left thrust")
 
 func _input(event: InputEvent) -> void:
     if (event.is_action_pressed("move_up")):
