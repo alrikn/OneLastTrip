@@ -21,7 +21,7 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Global="*uid://b2ykbxxx6v1m3"
+Global="*res://scripts/global.gd"
 
 [input]
 
