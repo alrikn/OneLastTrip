@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br1soo0a6ah23"
-path="res://.godot/imported/airplane_still.png-71c29ee7fa9b4d49fba047edee38a10b.ctex"
+uid="uid://o3jjffok130h"
+path="res://.godot/imported/rocket.png-ee7caa6d60b8c73f0b17d79a887f39b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/airplane_still.png"
-dest_files=["res://.godot/imported/airplane_still.png-71c29ee7fa9b4d49fba047edee38a10b.ctex"]
+source_file="res://assets/rocket.png"
+dest_files=["res://.godot/imported/rocket.png-ee7caa6d60b8c73f0b17d79a887f39b7.ctex"]
 
 [params]
 
