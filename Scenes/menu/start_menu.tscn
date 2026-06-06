@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://d20eqi8ftlf36"]
+
+[ext_resource type="Script" uid="uid://dr8xfuc56614i" path="res://Scenes/menu/start_menu.gd" id="1_8qmne"]
+[ext_resource type="Texture2D" uid="uid://b006fybiv7rq4" path="res://assets/bakground.png" id="1_woty5"]
+[ext_resource type="FontFile" uid="uid://bx0sv7ocmucsv" path="res://assets/VT323-Regular.ttf" id="2_sfwea"]
+[ext_resource type="Texture2D" uid="uid://dfj1la63ymhy2" path="res://assets/Box.png" id="3_s81qc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_woty5"]
+font = ExtResource("2_sfwea")
+font_size = 64
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.60784316)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s81qc"]
+font = ExtResource("2_sfwea")
+font_size = 32
+
+[node name="Menu" type="Control" unique_id=1202510445]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qmne")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1551161187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_woty5")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1237691146]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -133.0
+offset_right = 51.5
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ONE LAST TRIP"
+label_settings = SubResource("LabelSettings_woty5")
+horizontal_alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="." unique_id=1079899712]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.5
+offset_top = -46.4375
+offset_right = 265.5
+offset_bottom = 46.4375
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_s81qc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StartText" type="Label" parent="StartButton" unique_id=1935362514]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Mission"
+label_settings = SubResource("LabelSettings_s81qc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

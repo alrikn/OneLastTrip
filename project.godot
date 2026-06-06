@@ -15,13 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="godot_vscode"
-run/main_scene="uid://b36usg7v6m7m"
+run/main_scene="uid://d20eqi8ftlf36"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Global="*res://scripts/global.gd"
+Global="*uid://b2ykbxxx6v1m3"
 
 [input]
 
