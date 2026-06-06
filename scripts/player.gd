@@ -7,7 +7,7 @@ var apply_upwards_acc = false
 var apply_right_acc = false
 var apply_left_acc = false
 var exploding = false #are we currently exploding?
-@export var thrust_force: float = 2100.0
+@export var thrust_force: float = 1500.0
 @export var torque_force: float = 4500.0
 
 #camera controls
