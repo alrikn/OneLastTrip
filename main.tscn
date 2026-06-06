@@ -5,19 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://b8g1lpm5fcitg" path="res://Scenes/map/map.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://begkputwheor5" path="res://Scenes/victims/victims.tscn" id="4_1bvp3"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1664706332]
 editor_description = "testing a comment
 
 
 testing a comment with another line"
 
-[node name="Player" parent="." instance=ExtResource("1_1bvp3")]
+[node name="Player" parent="." unique_id=1515864289 instance=ExtResource("1_1bvp3")]
+position = Vector2(2, -2)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1360288252]
 
-[node name="HUD" parent="." instance=ExtResource("2_h2yge")]
+[node name="HUD" parent="." unique_id=2128695017 instance=ExtResource("2_h2yge")]
 
-[node name="Map" parent="." instance=ExtResource("3_h2yge")]
+[node name="Map" parent="." unique_id=409075023 instance=ExtResource("3_h2yge")]
 
-[node name="Node2D" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(309, 33)
+[node name="Node2D" parent="." unique_id=1977726073 instance=ExtResource("4_1bvp3")]
+position = Vector2(310, 33)
