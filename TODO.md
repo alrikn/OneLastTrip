@@ -2,24 +2,6 @@
 
 this is a todo list to investigate and/or implement things that i hear about or am struggling to understand or simply want to implement. (not ordered)
 
-- [ ] investigate state machine that deals with input
-- [x] why does rotation slow down and stop, but linear velocity doesn't
-  - its because of default values in godot engine (we can change it in tscn file):
-    | Property       | Default | Effect                   |
-    | -------------- | ------- | ------------------------ |
-    | `linear_damp`  | 0       | no slowdown              |
-    | `angular_damp` | 1       | rotation slows and stops |
-
-- [x] how to implement rotation
-- [x] how to implement thrust based of the players angle (so making a rocket), instead of absolute up and down
-- [x] find out how to measure speed
-- [x] figure out how to display a text box with lin vel, rot vel, height
-- [ ] figure how to ensure that the player is never under the camera (i feel like we should always be able to see it fall), while still keeping camera smoothness.
-- [ ] figure out how to implement a sprite sheet for the rocket exhaust.
-- [ ] figure out how to make it explode if its touching ground and on its side (or if it touches the ground too fast)
-  - [ ] make a explosion sprite sheet for death
-- [x] make a reset button
-- [ ] implement an animation (preferably programmatically), displaying white exhaust smoke for the rotation acceleration and linear accelaration
-  - [ ] every exhaust frame has to be 28px wide by 79px high
-- [x] implement an explosion for when the user has more g forces than reasonable.
-- [ ] move the explosion functio from the player script to the explosion script
+- [ ] figure out how to add a bunch of victim scenes (the little people), and dynamically change which image is being used for the victim
+- [ ] figure out how to make a script to collect the people when the player (the rocket) is in their collision box (is on them) and when the player speed is slow enough. (and eventually add a score when he does that (score not important rn))
+  - [ ] figure out if when that happens we delete them or just move them off the map
