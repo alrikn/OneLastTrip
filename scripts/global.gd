@@ -1,5 +1,6 @@
 extends Node
 
+var player_state: Node = null
 var time_left: float = 300.0
 var score: int = 0
 var is_game_active: bool = false
