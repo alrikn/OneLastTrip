@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b36usg7v6m7m"]
 
 [ext_resource type="PackedScene" uid="uid://bduw6bopvn52e" path="res://Scenes/player.tscn" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dh1huukdkkwlj" path="res://Scenes/hud.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b8g1lpm5fcitg" path="res://Scenes/map.tscn" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://scripts/stats_label.gd" id="5_lquwl"]
 
 [node name="Main" type="Node2D"]
 editor_description = "testing a comment
@@ -14,17 +14,6 @@ testing a comment with another line"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="StatsPanel" type="Panel" parent="HUD"]
-custom_minimum_size = Vector2(150, 110)
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="StatsLabel" type="Label" parent="HUD/StatsPanel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("5_lquwl")
+[node name="HUD" parent="." instance=ExtResource("2_h2yge")]
 
 [node name="Map" parent="." instance=ExtResource("3_h2yge")]

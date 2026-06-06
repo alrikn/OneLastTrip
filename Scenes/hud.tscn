@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh1huukdkkwlj"]
+
+[ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://scripts/stats_label.gd" id="1_e0onf"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="StatsPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 110)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatsLabel" type="Label" parent="StatsPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_e0onf")
