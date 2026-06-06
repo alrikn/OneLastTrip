@@ -1,16 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh1huukdkkwlj"]
+[gd_scene format=3 uid="uid://dh1huukdkkwlj"]
 
+[ext_resource type="Script" uid="uid://x6jb14d3yrds" path="res://Scenes/hud/hud.gd" id="1_4welq"]
 [ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://scripts/stats_label.gd" id="1_e0onf"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=1158201795]
+script = ExtResource("1_4welq")
 
-[node name="StatsPanel" type="Panel" parent="."]
+[node name="StatsPanel" type="Panel" parent="." unique_id=535830395]
 custom_minimum_size = Vector2(150, 110)
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="StatsLabel" type="Label" parent="StatsPanel"]
+[node name="StatsLabel" type="Label" parent="StatsPanel" unique_id=1725635653]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("1_e0onf")
+
+[node name="GamePanel" type="Panel" parent="." unique_id=1435962745]
+custom_minimum_size = Vector2(150, 110)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="GameLabel" type="Label" parent="GamePanel" unique_id=1400030388]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

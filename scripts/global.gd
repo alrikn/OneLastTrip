@@ -16,6 +16,6 @@ func _process(delta: float):
 	if is_game_active:
 		if time_left > 0:
 			time_left -= delta
-		else
+		else:
 			time_left = 0
 			is_game_active = false
