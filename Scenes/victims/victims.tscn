@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://begkputwheor5"]
+
+[ext_resource type="Script" uid="uid://wrqfdj5y2mnf" path="res://scripts/victim.gd" id="1_cdjn0"]
+[ext_resource type="Texture2D" uid="uid://c4g1033gtolsy" path="res://assets/pixel_people/robot.png" id="1_gnsos"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdjn0"]
+
+[node name="Victim" type="Node2D"]
+script = ExtResource("1_cdjn0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_cdjn0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_gnsos")
