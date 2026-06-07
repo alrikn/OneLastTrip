@@ -182,9 +182,15 @@ position = Vector2(-261, 3190)
 
 [node name="Victim7" parent="." unique_id=2040987049 instance=ExtResource("2_52gxq")]
 position = Vector2(-3216, -69)
+hint_text = "Go help those people in that Cave!"
 
 [node name="Victim8" parent="." unique_id=1588717739 instance=ExtResource("2_52gxq")]
 position = Vector2(-7659, -234)
 
 [node name="Victim9" parent="." unique_id=1462475799 instance=ExtResource("2_52gxq")]
 position = Vector2(-5809, -1026)
+
+[node name="Victim10" parent="." unique_id=1348952824 instance=ExtResource("2_52gxq")]
+position = Vector2(-4184, -135)
+hint_text = "There are a bunch of people in that cave!
+You have to go help them!"

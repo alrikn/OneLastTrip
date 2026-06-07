@@ -47,7 +47,7 @@ func _ready() -> void:
 
 func _create_hint_label() -> void:
     var padding := Vector2(10, 8)
-    var max_width := 150.0
+    var max_width := 200.0
 
     var bg := ColorRect.new()
     bg.color = Color(0, 0, 0, 0.6)
