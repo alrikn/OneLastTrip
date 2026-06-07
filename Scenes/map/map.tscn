@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://j3ebcpaghpos" path="res://Scenes/map/grass_lands.res" id="2_jhl4n"]
 [ext_resource type="Texture2D" uid="uid://dmcfo50q5cr7g" path="res://assets/repeating_cloud.jpg" id="2_p3ir5"]
 [ext_resource type="PackedScene" uid="uid://fk26ufw6r5jl" path="res://Scenes/map/cave.tscn" id="3_xjp1v"]
+[ext_resource type="Script" uid="uid://yheuc0i4s3ss" path="res://scripts/escape_line.gd" id="4_q2yfs"]
 
 [node name="Map" type="Node2D" unique_id=255250684]
 
@@ -23,3 +24,8 @@ stretch_mode = 1
 position = Vector2(-1, -1)
 
 [node name="Cave" parent="." unique_id=300399744 instance=ExtResource("3_xjp1v")]
+position = Vector2(8379, 491)
+
+[node name="EscapeLine" type="Node2D" parent="." unique_id=260637182]
+position = Vector2(0, -7500)
+script = ExtResource("4_q2yfs")
