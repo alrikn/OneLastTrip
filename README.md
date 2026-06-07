@@ -1,36 +1,39 @@
-# OneLastTrip
+# One Last Trip 🚀
 
-This was my attempt at using godot (essentially for the first time), in vscode.
-I have never worked with game engines, nor have i ever played with game pysics, so i am learning a lot.
+A physics-based arcade rescue game made in Godot 4. Pilot a rocket, try not to crash, and save as many people as you can before escaping.
 
-**Theme**
-The world ends in 5 minutes
+## 🎮 Features
 
-**Game:**
-- To win you must escape the planet. You have a rocket, but that rocket can't escape at the start.
-- You have to save/board people to the rocket so you can escape the planet while saving as much people as possible. To collect the people, you'll have to land on platforms located around the earth.
-- The goal is to escape the planet with as much people as possible. It is a score-based game for now.
+* **Physics Flight:** You control the thrust and torque. There's a custom PD-controller stabilizer mapped to the spacebar to keep you from spinning out completely.
+* **Arcade Scoring:** Stop near victims to rescue them (+10 points), but exploding costs you (-5 points). 
+* **Win/Loss:** The game ends if you run out of time, or you win if you fly high enough to reach the escape line.
+* **Save Data:** High scores are automatically saved to your local machine.
 
-**Game Logic:**
-- People that exist
-- Landing to collect
-- escaping orbit (win/lose condition)
+## 🛠️ How to run it from the terminal
 
-**Map:**
-- Platforms for the people
-- Terrain:
- - Mountain
- - Sea
- - Cave
- - Floating Platforms
-- Insta-death blocks
+If you want to run this directly from your command line without opening the Godot Editor, you just need the Godot 4 binary set up in your system's PATH.
 
-**Menu:**
-- Scoreboard
-- Start/End
-- Win/Lose message (diff menu screen)
-- Play again Button (diff menu screen)
+### Setting up the Godot binary (Linux/Unix)
 
-**HUD:**
-- Top right -> Timer (globlal variables)
-- Bottom middle/left -> Score counter (global variables)
+1. Download the standard Godot 4 Linux build from the [official site](https://godotengine.org/).
+2. Unzip it to get the binary file (e.g., `Godot_v4.x-stable_linux.x86_64`).
+3. Move and rename the binary so your terminal recognizes the `godot` command globally:
+   ```bash
+   sudo cp Godot_v4.x-stable_linux.x86_64 ~/.local/bin/godot
+   chmod +x ~/.local/bin/godot
+    ```
+
+### Execution
+
+Once `godot` is recognized as a command, navigate to the root folder of this project and run:
+```bash
+    godot --path .
+```
+
+## ⌨️ Controls
+
+- Up Arrow: Main Thrust 
+- Left Arrow: Rotate Left
+- Right Arrow: Rotate Right
+- S Key: Auto-Stabilize
+- R Key: Self-Destruct
