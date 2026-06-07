@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_x172q"]
 font = ExtResource("3_i770l")
-font_size = 32
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_hxxik"]
 font = ExtResource("3_i770l")
@@ -15,6 +15,15 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.60784316)
 shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvt8p"]
+font = ExtResource("3_i770l")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_p2nk7"]
+font = ExtResource("3_i770l")
+font_size = 30
+font_color = Color(0.8804722, 0.8804717, 0, 1)
 
 [node name="GameOver" type="Control" unique_id=680830068]
 layout_mode = 3
@@ -81,3 +90,35 @@ grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_hxxik")
 horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=23402410]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -236.0
+offset_right = 127.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_yvt8p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=775273827]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -172.0
+offset_right = 72.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_p2nk7")
