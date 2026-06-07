@@ -1,5 +1,7 @@
 extends Node2D
 
+@export_multiline var hint_text: String = ""
+
 const TEXTURES = [
     "res://assets/pixel_people/person001.png",
     "res://assets/pixel_people/person002.png",
@@ -29,6 +31,8 @@ var player: RigidBody2D = null
 
 func _ready() -> void:
     $Area2D/Sprite2D.texture = load(TEXTURES[randi() % TEXTURES.size()])
+    if hint_text != "":
+        _create_hint_label()
 
     $Area2D.body_entered.connect(_on_body_entered)
     $Area2D.body_exited.connect(_on_body_exited)
@@ -40,6 +44,29 @@ func _ready() -> void:
     timer.timeout.connect(_on_collect_timeout)
     add_child(timer)
     set_physics_process(false)
+
+func _create_hint_label() -> void:
+    var padding := Vector2(10, 8)
+    var max_width := 150.0
+
+    var bg := ColorRect.new()
+    bg.color = Color(0, 0, 0, 0.6)
+    add_child(bg)
+
+    var label := Label.new()
+    label.text = hint_text
+    label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+    label.custom_minimum_size = Vector2(max_width, 0)
+    add_child(label)
+
+    await get_tree().process_frame
+    await get_tree().process_frame
+
+    var box_size := label.size + padding * 2
+    bg.size = box_size
+    bg.position = Vector2(-box_size.x / 2.0, -box_size.y - 20.0)
+    label.position = bg.position + padding
 
 func _physics_process(_delta: float) -> void:
     if player == null:

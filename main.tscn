@@ -20,5 +20,16 @@ position = Vector2(2, -2)
 
 [node name="Map" parent="." unique_id=409075023 instance=ExtResource("3_h2yge")]
 
-[node name="Node2D" parent="." unique_id=1977726073 instance=ExtResource("4_1bvp3")]
-position = Vector2(310, 33)
+[node name="Victim" parent="." unique_id=1391014472 instance=ExtResource("4_1bvp3")]
+position = Vector2(161, 183)
+hint_text = "THE WORLD IS GONNA BLOW UP IN 5 MINUTES!!!
+
+You need to collect as many people as possible before the world explodes!
+
+Escape to space before the timer runs out!
+
+CONTROLS:
+S: stabilise
+Up: thrust
+Left/Right Rotate
+"
