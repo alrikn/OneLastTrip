@@ -117,7 +117,7 @@ func _compute_inputs(state: PhysicsDirectBodyState2D) -> void:
 
 func _integrate_forces(state):
 	if pending_teleport: #this is used to rest it if it goes out of bound or smth
-		state.transform.origin = Vector2(100, -100)
+		state.transform.origin = Vector2(100, 80)
 		state.transform = Transform2D(0.0, state.transform.origin)
 		state.linear_velocity = Vector2.ZERO
 		state.angular_velocity = 0.0
