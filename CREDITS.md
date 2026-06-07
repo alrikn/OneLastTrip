@@ -6,6 +6,7 @@
 - **Author:** Anokolisa
 - **Source:** https://anokolisa.itch.io/sidescroller-pixelart-sprites-asset-pack-forest-16x16
 - **License:** Custom (see Terms: https://drive.google.com/file/d/17y1gjuwVirE8V79WcTL9tgTUtMu6R1je/view)
+- **Contact:** AnomalyPixel@gmail.com
 
 ### Tiny Pixel People Asset Pack
 - **Author:** BTL games
