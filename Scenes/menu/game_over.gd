@@ -7,8 +7,9 @@ extends Control
 
 func _ready() -> void:
 	$RestartButton.pressed.connect(_on_restart_button_pressed)
+	Global.check_high_score()
 	score_label.text = "Score: " + str(Global.score)
-	high_score_label.text = "Highscore: N/A"
+	high_score_label.text = "Highscore: " + str(Global.high_score)
 	if Global.win:
 		background.color = Color.DARK_GREEN
 		result_label.text = "MISSION ACCOMPLISHED!"
