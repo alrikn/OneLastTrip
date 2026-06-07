@@ -37,3 +37,8 @@ Once `godot` is recognized as a command, navigate to the root folder of this pro
 - Right Arrow: Rotate Right
 - S Key: Auto-Stabilize
 - R Key: Self-Destruct
+
+
+
+## 📄 License & Credits
+See [CREDITS.md](./CREDITS.md) for asset attributions and licenses.
