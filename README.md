@@ -1,4 +1,4 @@
-# godot_vscode
+# OneLastTrip
 
 This was my attempt at using godot (essentially for the first time), in vscode.
 I have never worked with game engines, nor have i ever played with game pysics, so i am learning a lot.
