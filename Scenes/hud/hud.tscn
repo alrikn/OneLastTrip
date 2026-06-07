@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://x6jb14d3yrds" path="res://Scenes/hud/hud.gd" id="1_4welq"]
 [ext_resource type="Script" uid="uid://be3axsydeunwp" path="res://scripts/stats_label.gd" id="1_e0onf"]
+[ext_resource type="Texture2D" uid="uid://dfj1la63ymhy2" path="res://assets/Box.png" id="3_vjapc"]
+[ext_resource type="FontFile" uid="uid://bx0sv7ocmucsv" path="res://assets/VT323-Regular.ttf" id="4_4mb1w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mb1w"]
+texture = ExtResource("3_vjapc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4mb1w"]
+font_size = 30
 
 [node name="HUD" type="CanvasLayer" unique_id=1158201795]
 script = ExtResource("1_4welq")
@@ -18,15 +26,30 @@ offset_bottom = 23.0
 script = ExtResource("1_e0onf")
 
 [node name="GamePanel" type="Panel" parent="." unique_id=1435962745]
+texture_filter = 1
 custom_minimum_size = Vector2(150, 110)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -150.0
+offset_bottom = 110.0
 grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4mb1w")
 
 [node name="GameLabel" type="Label" parent="GamePanel" unique_id=1400030388]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 5
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_4mb1w")
+label_settings = SubResource("LabelSettings_4mb1w")
+horizontal_alignment = 1
+vertical_alignment = 1
