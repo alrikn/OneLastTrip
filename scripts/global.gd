@@ -14,6 +14,8 @@ func reset_game():
 	time_left = 300.0
 	score = 0
 	is_game_active = true
+    win = false
+    #we also need to respawn all the little poeple somehow.
 
 func _process(delta: float):
 	if is_game_active:
