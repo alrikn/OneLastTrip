@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://euindu70b2uf"]
 
 [ext_resource type="Script" uid="uid://bg6tx8akicjdp" path="res://Scenes/menu/game_over.gd" id="1_yvt8p"]
-[ext_resource type="Texture2D" uid="uid://b1154ckq0gtfm" path="res://assets/lose.png" id="2_i770l"]
 [ext_resource type="Texture2D" uid="uid://dfj1la63ymhy2" path="res://assets/Box.png" id="2_p2nk7"]
 [ext_resource type="FontFile" uid="uid://bx0sv7ocmucsv" path="res://assets/VT323-Regular.ttf" id="3_i770l"]
 
@@ -26,15 +25,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yvt8p")
 
-[node name="Background" type="TextureRect" parent="." unique_id=889806046]
+[node name="Background" type="ColorRect" parent="." unique_id=1247399077]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 128.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_i770l")
-stretch_mode = 5
+color = Color(0.4554031, 1.0769255e-06, 2.1658838e-07, 1)
 
 [node name="RestartButton" type="TextureButton" parent="." unique_id=308064101]
 texture_filter = 1
