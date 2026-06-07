@@ -61,6 +61,7 @@ func explode():
 	$Sprite2D.show()
 	$Exhaust.show()
 	exploding = false
+	Global.score -= 5
 
 func _physics_process(_delta):
 	var cam = get_viewport().get_camera_2d()

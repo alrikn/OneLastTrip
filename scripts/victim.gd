@@ -94,4 +94,5 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_collect_timeout() -> void:
     if player and player.linear_velocity.length() < COLLECT_SPEED_THRESHOLD:
         print("collecting victim")
+        Global.score += 10
         queue_free()
