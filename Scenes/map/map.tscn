@@ -26,5 +26,6 @@ position = Vector2(-1, -1)
 [node name="Cave" parent="." unique_id=300399744 instance=ExtResource("3_xjp1v")]
 position = Vector2(8379, 491)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=260637182]
+[node name="EscapeLine" type="Node2D" parent="." unique_id=260637182]
+position = Vector2(0, -7500)
 script = ExtResource("4_q2yfs")

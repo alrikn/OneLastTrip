@@ -83,6 +83,11 @@ func _physics_process(_delta):
 		var change = abs(cam.position.y - position.y) / 3
 		cam.position.y -= change
 
+	if position.y <= -7500 and Global.is_game_active:
+		Global.win = true
+		Global.is_game_active = false
+		get_tree().change_scene_to_file("res://Scenes/menu/game_over.tscn")
+
 	if position.y > 100000 && !set_timer:
 		var timer_code = Timer.new()
 		add_child(timer_code)
