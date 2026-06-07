@@ -61,6 +61,7 @@ func explode():
 	$Sprite2D.show()
 	$Exhaust.show()
 	exploding = false
+	Global.score -= 5
 
 func _physics_process(_delta):
 	var cam = get_viewport().get_camera_2d()
@@ -81,6 +82,11 @@ func _physics_process(_delta):
 	if (position.y < cam.position.y): #camera goes up
 		var change = abs(cam.position.y - position.y) / 3
 		cam.position.y -= change
+
+	if position.y <= -7500 and Global.is_game_active:
+		Global.win = true
+		Global.is_game_active = false
+		get_tree().change_scene_to_file("res://Scenes/menu/game_over.tscn")
 
 	if position.y > 100000 && !set_timer:
 		var timer_code = Timer.new()
