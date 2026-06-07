@@ -5,6 +5,7 @@ var player: RigidBody2D
 func _ready():
        visible = false
        player = get_parent() as RigidBody2D
+       animation = "thrust"
 
 func _physics_process(_delta):
        if not player:
@@ -15,8 +16,8 @@ func _physics_process(_delta):
        if player.apply_upwards_acc:
               if !visible and player.exploding == false:
                      visible = true
-                     play("thrust")  # plays and loops your thrust animation
+                     play()  # resume from current frame
        else:
               if visible:
                      visible = false
-                     stop()
+                     pause()  # keep frame position instead of resetting to 0
