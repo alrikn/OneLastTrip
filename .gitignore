@@ -3,3 +3,11 @@
 *.txt
 *.x86_64
 helping_scripts
+*.exe
+*.apk
+*.wasm
+*.zip
+*.tar.gz
+*.log
+*.pck
+web_version
